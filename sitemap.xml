@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/index.html</loc></url>
+  <url><loc>https://example.com/about.html</loc></url>
+  <url><loc>https://example.com/privacy.html</loc></url>
+  <url><loc>https://example.com/contact.html</loc></url>
+  <url><loc>https://example.com/articles/emergency-fund.html</loc></url>
+  <url><loc>https://example.com/articles/savings-vs-deposit.html</loc></url>
+  <url><loc>https://example.com/articles/credit-score.html</loc></url>
+  <url><loc>https://example.com/articles/budgeting-method.html</loc></url>
+  <url><loc>https://example.com/articles/grocery-saving.html</loc></url>
+  <url><loc>https://example.com/articles/subscription-audit.html</loc></url>
+  <url><loc>https://example.com/articles/insurance-basics.html</loc></url>
+  <url><loc>https://example.com/articles/salary-negotiation.html</loc></url>
+</urlset>
