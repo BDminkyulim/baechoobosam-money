@@ -5,10 +5,27 @@
     --color-primary: #2f7d5e;
     --color-primary-dark: #235e46;
     --color-bg: #f7f8f6;
+    --color-surface: #ffffff;
     --color-text: #2c2c2c;
     --color-muted: #6b6b6b;
     --color-border: #e3e6e1;
+    --color-callout-bg: #f0f7f2;
+    --color-callout-text: #2c4a3b;
+    --color-tag-bg: #e8f3ec;
     --max-width: 860px;
+}
+
+html[data-theme="dark"] {
+    --color-primary: #4fb685;
+    --color-primary-dark: #6fcf9e;
+    --color-bg: #15181a;
+    --color-surface: #1f2326;
+    --color-text: #e8e9e6;
+    --color-muted: #a0a4a0;
+    --color-border: #33383a;
+    --color-callout-bg: #1d2a23;
+    --color-callout-text: #cfe9da;
+    --color-tag-bg: #1d2e25;
 }
 
 html { scroll-behavior: smooth; }
@@ -19,6 +36,7 @@ body {
     color: var(--color-text);
     line-height: 1.7;
     -webkit-text-size-adjust: 100%;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 a { color: var(--color-primary); text-decoration: none; }
@@ -28,7 +46,7 @@ img { max-width: 100%; display: block; }
 
 /* 헤더 / 내비게이션 */
 .site-header {
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
@@ -87,7 +105,7 @@ main {
 .post-list { display: grid; gap: 16px; }
 
 .post-card {
-    background: #ffffff;
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 20px;
@@ -100,7 +118,7 @@ main {
     display: inline-block;
     font-size: 12px;
     color: var(--color-primary);
-    background: #e8f3ec;
+    background: var(--color-tag-bg);
     padding: 3px 9px;
     border-radius: 20px;
     margin-bottom: 8px;
@@ -114,24 +132,24 @@ main {
 
 /* 글(아티클) 본문 */
 .article-header { margin-bottom: 24px; }
-.article-header .category { display:inline-block; font-size:12px; color: var(--color-primary); background:#e8f3ec; padding:3px 9px; border-radius:20px; margin-bottom:10px; font-weight:600;}
+.article-header .category { display:inline-block; font-size:12px; color: var(--color-primary); background:var(--color-tag-bg); padding:3px 9px; border-radius:20px; margin-bottom:10px; font-weight:600;}
 .article-header h1 { font-size: 26px; margin-bottom: 10px; line-height: 1.4; }
 .article-header .meta { font-size: 13px; color: var(--color-muted); }
 
 .article-body h2 { font-size: 20px; margin: 30px 0 12px; }
 .article-body h3 { font-size: 17px; margin: 22px 0 10px; }
-.article-body p { font-size: 15.5px; margin-bottom: 16px; color: #333; }
+.article-body p { font-size: 15.5px; margin-bottom: 16px; color: var(--color-text); }
 .article-body ul, .article-body ol { margin: 0 0 16px 22px; font-size: 15.5px; }
 .article-body li { margin-bottom: 6px; }
 
 .callout {
-    background: #f0f7f2;
+    background: var(--color-callout-bg);
     border-left: 4px solid var(--color-primary);
     padding: 14px 18px;
     border-radius: 8px;
     font-size: 14.5px;
     margin: 20px 0;
-    color: #2c4a3b;
+    color: var(--color-callout-text);
 }
 
 table.compare {
@@ -145,7 +163,7 @@ table.compare th, table.compare td {
     padding: 10px 12px;
     text-align: left;
 }
-table.compare th { background: #f0f3ef; }
+table.compare th { background: var(--color-tag-bg); }
 
 /* 광고 영역 */
 .ad-slot {
@@ -165,7 +183,7 @@ table.compare th { background: #f0f3ef; }
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    background: #ffffff;
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 18px;
@@ -182,7 +200,7 @@ table.compare th { background: #f0f3ef; }
 
 /* 푸터 */
 .site-footer {
-    background: #ffffff;
+    background: var(--color-surface);
     border-top: 1px solid var(--color-border);
     padding: 30px 20px;
     margin-top: 40px;
@@ -203,8 +221,29 @@ table.compare th { background: #f0f3ef; }
 /* 정적 페이지 (소개/정책/문의) */
 .static-page h1 { font-size: 24px; margin-bottom: 18px; }
 .static-page h2 { font-size: 18px; margin: 24px 0 10px; }
-.static-page p, .static-page li { font-size: 15px; color: #333; margin-bottom: 12px; }
+.static-page p, .static-page li { font-size: 15px; color: var(--color-text); margin-bottom: 12px; }
 .static-page ul { margin-left: 20px; }
+
+/* 다크모드 토글 버튼 */
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover { border-color: var(--color-primary); }
+.theme-toggle .icon-dark { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-light { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-dark { display: inline; }
 
 @media (max-width: 600px) {
     .hero h1 { font-size: 22px; }

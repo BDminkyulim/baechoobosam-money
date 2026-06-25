@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}})();</script>
 <meta name="google-adsense-account" content="ca-pub-3819932954579285">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3819932954579285" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +31,7 @@
       <a href="about.html">소개</a>
       <a href="contact.html">문의</a>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="다크모드 전환" type="button"><span class="icon-light">🌙</span><span class="icon-dark">☀️</span></button>
   </div>
 </header>
 
@@ -63,5 +65,6 @@
   </div>
 </footer>
 
+<script src="js/theme.js"></script>
 </body>
 </html>
